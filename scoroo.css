@@ -91,41 +91,78 @@ h1 {
   background-color: #faa307;
   transform: scale(1.05);
 }
-
-/* Results */
 .result {
-  background-color: #ffffffcc;
+  background: linear-gradient(to bottom right, #ffffff, #f1f9ff);
   margin: 30px auto;
-  padding: 25px;
-  max-width: 500px;
-  border-radius: 15px;
+  padding: 35px 25px;
+  max-width: 600px;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeInScale 0.5s ease-in-out;
 }
 
 .result h2 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 2rem;
   color: #023047;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.result ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
 }
 
 .result ul li {
-  font-size: 1.2rem;
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
+  background-color: #eaf6ff;
+  margin: 12px auto;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #006d77;
+  width: 80%;
+  text-align: center;
+  position: relative;
+  transition: background 0.3s, transform 0.3s;
 }
 
-.result ul li:last-child {
-  border-bottom: none;
+.result ul li:hover {
+  background-color: #d4efff;
+  transform: translateY(-2px);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
+/* Ranking Emojis */
+.result ul li:nth-child(1)::before {
+  content: "🥇 ";
+}
 
-  .team-card {
-    width: 90%;
+.result ul li:nth-child(2)::before {
+  content: "🥈 ";
+}
+
+.result ul li:nth-child(3)::before {
+  content: "🥉 ";
+}
+
+.result ul li:nth-child(n+4)::before {
+  content: " ";
+}
+
+/* Animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
   }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 }
